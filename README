@@ -1,7 +1,9 @@
 -------------------
-Rhostore
+Rhostore (mprodigy instrumented)
 a simple example application used to demonstrate and test sync
 --------------------
+
+This version has been instrumented to demonstrate usage of mprodigy analytics.
 
 Install rhodes: http://docs.rhomobile.com/rhodes/introduction
 

@@ -32,3 +32,5 @@ symbian:
 
 #bb:
 #  ignore_bb6_suffix: 1
+
+extensions: ["mprodigy"]

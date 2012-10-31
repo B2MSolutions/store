@@ -1,0 +1,3 @@
+[submodule "extensions/mprodigy"]
+	path = extensions/mprodigy
+	url = git@github.com:B2MSolutions/rhodes-mprodigy.git
