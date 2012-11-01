@@ -35,16 +35,25 @@ class AppApplication < Rho::RhoApplication
   end
   
   def on_activate_app
-    puts "on_activate_app"
+    RhoLog::info("mProdigy::Application::on_activate_app", SyncEngine.logged_in)
   end
 
-  def on_ui_created
-    @sessionId = Mprodigy::API::sessionBegin('application', '1.1', '1', 'other')
+  def on_deactivate_app
+    RhoLog::info("mProdigy::Application::on_deactivate_app", SyncEngine.logged_in)
+  end
+
+  def on_sync_user_changed
+    RhoLog::info("mProdigy::Application::on_sync_user_changed", SyncEngine.logged_in)
+    super
+  end 
+
+  def on_ui_created    
+    RhoLog::info("mProdigy::Application::on_ui_created", SyncEngine.logged_in)
     super
   end
 
   def on_ui_destroyed
-    Mprodigy::API::sessionEnd(@sessionId)
+    RhoLog::info("mProdigy::Application::on_ui_destroyed", SyncEngine.logged_in)
   end
-  
+
 end

@@ -2,7 +2,6 @@ require 'rho'
 require 'rho/rhocontroller'
 require 'rho/rhoerror'
 require 'helpers/browser_helper'
-require 'mprodigy'
 
 class SettingsController < Rho::RhoController
   include BrowserHelper
@@ -29,7 +28,6 @@ class SettingsController < Rho::RhoController
   def login_callback
     errCode = @params['error_code'].to_i
     if errCode == 0
-      ::Rho.get_app.userId = Mprodigy::API::userLogin(::Rho.get_app.sessionId, @params['login'])
       # run sync if we were successful
       # WebView.navigate Rho::RhoConfig.options_path
       WebView.navigate (url_for :action => :wait_sync)
@@ -64,7 +62,6 @@ class SettingsController < Rho::RhoController
   end
 
   def logout
-    Mprodigy::API::userLogout(::Rho.get_app.userId)
     SyncEngine.logout
     @msg = "You have been logged out."
     render :action => :login
