@@ -26,6 +26,7 @@ class AppApplication < Rho::RhoApplication
 
     super
 
+    Mprodigy::API::instrument
     SyncEngine::set_objectnotify_url("/app/Settings/sync_object_notify")
     
     # we want to be notified whenever either of these sources is synced
@@ -34,26 +35,4 @@ class AppApplication < Rho::RhoApplication
     
   end
   
-  def on_activate_app
-    RhoLog::info("mProdigy::Application::on_activate_app", SyncEngine.logged_in)
-  end
-
-  def on_deactivate_app
-    RhoLog::info("mProdigy::Application::on_deactivate_app", SyncEngine.logged_in)
-  end
-
-  def on_sync_user_changed
-    RhoLog::info("mProdigy::Application::on_sync_user_changed", SyncEngine.logged_in)
-    super
-  end 
-
-  def on_ui_created    
-    RhoLog::info("mProdigy::Application::on_ui_created", SyncEngine.logged_in)
-    super
-  end
-
-  def on_ui_destroyed
-    RhoLog::info("mProdigy::Application::on_ui_destroyed", SyncEngine.logged_in)
-  end
-
 end
