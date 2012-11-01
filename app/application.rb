@@ -2,22 +2,7 @@ require 'rho/rhoapplication'
 require 'mprodigy'
 
 class AppApplication < Rho::RhoApplication
-  def sessionId
-    @sessionId
-  end
-    
-  def sessionId=(val)
-    @sessionId = val
-  end
-
-  def userId
-    @userId
-  end
-    
-  def userId=(val)
-    @userId = val
-  end
-
+  
   def initialize
     # Tab items are loaded left->right, @tabs[0] is leftmost tab in the tab-bar
     # Super must be called *after* settings @tabs!
