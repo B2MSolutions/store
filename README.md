@@ -1,5 +1,6 @@
 # Rhostore ([mprodigy instrumented](https://github.com/B2MSolutions/rhodes-mprodigy))
-## a simple example application used to demonstrate and test sync
+
+A simple example application used to demonstrate and test sync
 
 This version has been instrumented to demonstrate usage of the [rhodes-mprodigy](https://github.com/B2MSolutions/rhodes-mprodigy) native extension.
 
